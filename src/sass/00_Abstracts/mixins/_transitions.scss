@@ -1,0 +1,12 @@
+@import '../variables';
+
+@mixin transition-ease-in-out($speed: fast) {
+    @if($use-transitions) {
+        @if map-has-key($transitions, $speed) {
+            transition: all map-get($transitions, $speed) ease-in-out;
+        } 
+        @else {
+            @warn "Invalid font size: `#{$speed}`.";
+        }
+    }
+}

@@ -1,0 +1,30 @@
+/// Replace `$search` with `$replace` in `$string`
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1)+$replace+str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+/// Determine if `$string` end with `$search`
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to find
+/// @return {Boolean} - true/false
+@function str-ends-with($string, $search) {
+    @return str-slice(quote($string), (str-length($string) - str-length($search) + 1)) == $search;
+}
+
+/// Determine if `$string` contains `$search`
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to find
+/// @return {Boolean} - true/false
+@function str-contains($string, $search) {
+    @return str-index(quote($string), $search) != null;
+}

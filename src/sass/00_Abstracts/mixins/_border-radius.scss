@@ -1,0 +1,64 @@
+@import '../variables';
+
+@mixin border-radius($size) {
+    @if($use-rounded-corners) {
+        @if map-has-key($border-radiuses, $size) {
+            border-radius: map-get($border-radiuses, $size);
+        } 
+        @else {
+            @warn "Invalid font size: `#{$size}`.";
+        }
+    }
+}
+
+@mixin border-radius-top($size) {
+    @if($use-rounded-corners) {
+        @if map-has-key($border-radiuses, $size) {
+            border-radius: 0;
+            border-top-left-radius: map-get($border-radiuses, $size);
+            border-top-right-radius: map-get($border-radiuses, $size);
+        } 
+        @else {
+            @warn "Invalid font size: `#{$size}`.";
+        }
+    }
+}
+
+@mixin border-radius-bottom($size) {
+    @if($use-rounded-corners) {
+        @if map-has-key($border-radiuses, $size) {
+            border-radius: 0;
+            border-bottom-left-radius: map-get($border-radiuses, $size);
+            border-bottom-right-radius: map-get($border-radiuses, $size);
+        } 
+        @else {
+            @warn "Invalid font size: `#{$size}`.";
+        }
+    }
+}
+
+@mixin border-radius-left($size) {
+    @if($use-rounded-corners) {
+        @if map-has-key($border-radiuses, $size) {
+            border-radius: 0;
+            border-bottom-left-radius: map-get($border-radiuses, $size);
+            border-top-left-radius: map-get($border-radiuses, $size);
+        } 
+        @else {
+            @warn "Invalid font size: `#{$size}`.";
+        }
+    }
+}
+
+@mixin border-radius-right($size) {
+    @if($use-rounded-corners) {
+        @if map-has-key($border-radiuses, $size) {
+            border-radius: 0;
+            border-bottom-right-radius: map-get($border-radiuses, $size);
+            border-top-right-radius: map-get($border-radiuses, $size);
+        } 
+        @else {
+            @warn "Invalid font size: `#{$size}`.";
+        }
+    }
+}

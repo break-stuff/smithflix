@@ -1,0 +1,18 @@
+@import '../variables';
+@import 'strings';
+
+@function spacing($name) {
+    $prefix: "";
+
+    @if(str-contains($name, "-")) {
+        $prefix: "-";
+        $name: str-replace($name, "-", "");
+    }
+
+    @if map-has-key($spacing-sizes, $name) {
+        @return unquote($prefix + map-get($spacing-sizes, $name));
+    } 
+    @else {
+        @warn "Invalid spacing size: `#{$name}`.";
+    }
+}
