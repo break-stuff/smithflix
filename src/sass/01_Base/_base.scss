@@ -1,6 +1,14 @@
 @import "../00_Abstracts/index.scss";
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: $line-height-base;
+}
+
+#app {
+    height: 100%;
 }

@@ -13,9 +13,9 @@ export default new Router({
             component: Home
         },
         {
-            path: '/about',
-            name: 'about',
-            component: () => import( /* webpackChunkName: "about" */ './views/About.vue')
+            path: '/dashboard',
+            name: 'dashboard',
+            component: () => import( /* webpackChunkName: "dashboard" */ './views/Dashboard.vue')
         },
         {
             path: '/cart',

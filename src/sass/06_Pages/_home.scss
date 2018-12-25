@@ -1,0 +1,32 @@
+@import "../00_Abstracts/index.scss";
+
+.home {
+    background-image: url(~@/assets/smithflix-backsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: color(white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    text-shadow: rgb(0, 0, 0) 1px 1px 10px;
+
+    .lead {
+        h1 {
+            color: color(primary);
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+        }
+
+        .btn {
+            font-size: 2.5rem;
+            text-shadow: none;
+        }
+    }
+}

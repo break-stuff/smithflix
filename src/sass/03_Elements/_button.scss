@@ -1,0 +1,8 @@
+@import "../00_Abstracts/index.scss";
+
+.btn {
+    &.btn-primary {
+        background-color: color(primary);
+        border-color: color(primary);
+    }
+}

@@ -1,0 +1,18 @@
+@import "../00_Abstracts/index.scss";
+
+.navbar {
+    height: auto;
+    
+    .navbar-brand {
+        color: color(primary);
+        font-weight: bold;
+
+        &.active {
+            color: color(primary);
+        }
+
+        @include hover-focus-active {
+            color: color(primary);
+        }
+    }
+}
