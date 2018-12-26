@@ -12,6 +12,7 @@ export default {
     },
 
     clear() {
+        // console.log('clear localStorage');
         localStorage.clear();
     }
 }
