@@ -1,4 +1,7 @@
-export default [{
+// Sample data provided by The Movie DB https://www.themoviedb.org
+
+export default [
+    {
         "id": 28,
         "name": "Action"
     },

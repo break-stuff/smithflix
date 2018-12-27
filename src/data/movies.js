@@ -1,3 +1,5 @@
+// Sample data provided by The Movie DB https://www.themoviedb.org
+
 export default [{
         "vote_count": 865,
         "id": 297802,
