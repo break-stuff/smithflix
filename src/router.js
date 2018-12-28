@@ -19,9 +19,20 @@ export default new Router({
             component: () => import( /* webpackChunkName: "dashboard" */ './views/Dashboard.vue')
         },
         {
+            path: '/dashboard/:filter',
+            name: 'dashboard',
+            component: () => import( /* webpackChunkName: "dashboard" */ './views/Dashboard.vue')
+        },
+        {
             path: '/cart',
             name: 'cart',
             component: () => import( /* webpackChunkName: "cart" */ './views/Cart.vue')
         }
-    ]
+    ],
+    scrollBehavior(to, from, savedPosition) {
+        return {
+            x: 0,
+            y: 0
+        }
+    }
 });
