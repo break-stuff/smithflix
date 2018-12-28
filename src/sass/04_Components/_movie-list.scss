@@ -1,0 +1,24 @@
+@import "../00_Abstracts/index.scss";
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .movie-summary {
+        width: 23%;
+        @include m(sm);
+
+        @include breakpoint-below(md) {
+            width: 31%;
+        }
+
+        @include breakpoint-below(sm) {
+            width: 46%;
+        }
+
+        @include breakpoint-below(xs) {
+            width: 100%;
+        }
+    }
+}

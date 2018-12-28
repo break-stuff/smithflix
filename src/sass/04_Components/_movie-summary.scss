@@ -1,0 +1,15 @@
+@import "../00_Abstracts/index.scss";
+
+.movie-summary {
+    border-radius: 0;
+
+    .card-title {
+        text-shadow: 2px 2px color(dark)
+    }
+
+    .card-img-overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}

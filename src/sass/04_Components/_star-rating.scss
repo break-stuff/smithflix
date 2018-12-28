@@ -1,0 +1,22 @@
+@import "../00_Abstracts/index.scss";
+
+.star-rating {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1em;
+    justify-content: start;
+}
+.back-stars {
+    display: flex;
+    color: color(dark, base, 0.5);
+    position: relative;
+    text-shadow: color(dark);
+}
+.front-stars {
+    display: flex;
+    color: color(warning);
+    overflow: hidden;
+    position: absolute;
+    text-shadow: 2px 2px 5px color(warning, dark);
+    top: 0;
+}
