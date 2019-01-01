@@ -1,0 +1,30 @@
+@import "../00_Abstracts/index.scss";
+
+.side-nav {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: color(dark, light);
+    border-right: 1px solid color(dark);
+    @include p(lg);
+
+    .genres {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .favorites {
+        display: flex;
+        flex-direction: column;
+        @include mt(xl);
+
+        a {
+            color: color(white);
+
+            .fas {
+                width: 1rem;
+                @include mr(sm);
+            }
+        }
+    }
+}
