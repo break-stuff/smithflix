@@ -4,7 +4,7 @@ import Home from './views/Home.vue';
 
 Vue.use(Router);
 
-export default new Router({
+let router = new Router({
     mode: 'history',
     linkActiveClass: 'active',
     routes: [
@@ -36,3 +36,9 @@ export default new Router({
         }
     }
 });
+
+router.afterEach((to, from) => {
+    document.body.className = to.name;
+});
+
+export default router;

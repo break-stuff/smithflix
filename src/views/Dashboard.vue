@@ -1,6 +1,7 @@
 <template>
-    <div class="dashboard">
-        <h1 class="sr-only">This is the Dashboard page</h1>
+    <div class="content">
+        <h1 class="sr-only">Dashboard</h1>
+        <side-nav></side-nav>
         <movie-list :movies="movies" />
     </div>
 </template>
@@ -8,15 +9,22 @@
 <script>
     import movies from '../data/movies';
     import MovieList from '../components/MovieList';
+    import SideNav from '../components/SideNav';
 
     export default {
-        name: 'DashBoard',
+        name: 'Dashboard',
         components: {
-            MovieList
+            MovieList,
+            SideNav
         },
         data() {
             return {
                 movies
+            }
+        },
+        methods: {
+            test() {
+                this.$route
             }
         }
     }

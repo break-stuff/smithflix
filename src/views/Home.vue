@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="content">
         <div class="lead">
             <h1>Smithflix</h1>
             <h2>A Simple Vue.js Demo</h2>
