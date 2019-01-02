@@ -1,8 +1,8 @@
 <template>
     <div class="content">
         <h1 class="sr-only">Dashboard</h1>
-        <side-nav></side-nav>
-        <movie-list :movies="movies" />
+        <side-nav :filter="movieFilter" />
+        <movie-list :movies="filteredMovies" />
     </div>
 </template>
 
@@ -19,13 +19,48 @@
         },
         data() {
             return {
-                movies
+                movies,
+                filteredMovies: [],
+                movieFilter: {
+                    genres: [],
+                    search: ''
+                }
             }
         },
         methods: {
-            test() {
-                this.$route
+            filterMovies() {
+                this.filterByGenres();
+                this.filterBySearchTerm();
+            },
+
+            filterByGenres() {
+                this.filteredMovies = this.movieFilter.genres.length > 0 
+                                        ? this.movies.filter(movie => {
+                                            let isGenre = false
+                                            this.movieFilter.genres.forEach(genre => {
+                                                if(movie.genre_ids.includes(genre))
+                                                    isGenre = true;
+                                            });
+                                            return isGenre;
+                                        }) 
+                                        : this.movies;
+            },
+
+            filterBySearchTerm() {
+
             }
+        },
+        watch: {
+            movieFilter: {
+                handler(newFilter, oldFilter) {
+                    console.log('new filter', newFilter);
+                    this.filterMovies();
+                },
+                deep:true
+            }
+        },
+        created() {
+            this.filterMovies();
         }
     }
 </script>
