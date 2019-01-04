@@ -5,7 +5,6 @@
         <span class="search-icons">
             <a href="javascript:void(0);" class="search-clear" v-if="movieFilter.searchTerm" @click="clearSearch()">
                 <span class="sr-only">clear search</span>
-                <!-- <i class="fas fa-times"></i> -->
                 &times;
             </a>
             <i class="fas fa-search search-icon"></i>

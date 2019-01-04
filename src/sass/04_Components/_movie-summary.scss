@@ -2,6 +2,11 @@
 
 .movie-summary {
     border-radius: 0;
+    @include box-shadow(md);
+
+    .card-img-top {
+        border-radius: 0;
+    }
 
     .card-title {
         text-shadow: 2px 2px color(dark);

@@ -3,7 +3,10 @@
 .movie-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
 
     .movie-summary {
         width: 23%;
