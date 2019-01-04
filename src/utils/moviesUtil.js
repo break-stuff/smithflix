@@ -13,34 +13,33 @@ export default {
 
     filterByGenres(genres) {
         this.filteredMovies = genres.length > 0 
-                ? movies.filter(movie => {
-                    let isGenre = false
+            ? movies.filter(movie => {
+                let isGenre = false
 
-                    genres.forEach(genre => {
-                        if(movie.genre_ids.includes(genre))
-                            isGenre = true;
-                    });
+                genres.forEach(genre => {
+                    if(movie.genre_ids.includes(genre))
+                        isGenre = true;
+                });
 
-                    return isGenre;
-                }) 
-                : movies;    
+                return isGenre;
+            }) 
+            : movies;    
     },
 
     filterBySearchTerm(searchTerm) {
-        if (!searchTerm) return;
+        if (!searchTerm) return;        
 
         let term = searchTerm.toString().toLowerCase();
 
-        return this.filteredMovies.filter(movie => {
+        this.filteredMovies = this.filteredMovies.filter(movie => {
+            let foundMovie = false
             this.searchFields.forEach(prop => {
-                if (typeof (movie[prop]) === 'string' || typeof (movie[prop]) === 'string') {
-                    let value = movie[prop].toString().toLowerCase();
-                    if (value.includes(term))
-                        return true;
-                }
-
-                return false;
+                let value = movie[prop].toString().toLowerCase();
+                if (value.includes(term))
+                    foundMovie = true;
             });
+            
+            return foundMovie;
         });
     }
 }

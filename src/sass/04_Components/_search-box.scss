@@ -1,0 +1,33 @@
+@import "../00_Abstracts/index.scss";
+
+.search-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: color(black);
+
+    .search-input {
+        &::-ms-clear {
+            display: none;
+        }
+    }
+
+    .search-icons {
+        position: absolute;
+        @include ml(-sm);
+
+        .search-clear {
+            color: color(dark, light);
+
+            @include hover {
+                cursor: pointer;
+                font-size: 110%;
+                text-decoration: none;
+            }
+        }
+
+        .search-icon {
+            @include pl(sm);
+        }
+    }
+}
