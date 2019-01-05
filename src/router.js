@@ -24,6 +24,11 @@ let router = new Router({
             component: () => import( /* webpackChunkName: "dashboard" */ './views/Dashboard.vue')
         },
         {
+            path: '/movie/:id',
+            name: 'movie-details',
+            component: () => import( /* webpackChunkName: "dashboard" */ './views/MovieDetails.vue')
+        },
+        {
             path: '/cart',
             name: 'cart',
             component: () => import( /* webpackChunkName: "cart" */ './views/Cart.vue')

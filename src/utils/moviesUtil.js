@@ -1,4 +1,5 @@
 import movies from '../data/movies';
+import genres from '../data/genres';
 
 export default {
     searchFields: ['title', 'original_title', 'overview'],
@@ -41,5 +42,20 @@ export default {
             
             return foundMovie;
         });
+    },
+
+    sortMovies(sortProp, isAsc) {
+        return this.filteredMovies.sort((a, b) => {
+            return isAsc ? a[sortProp] - b[sortProp] : b[sortProp] - a[sortProp];
+        });
+    },
+
+    getMovieById(id) {
+        let movie = movies.find(movie => movie.id === id);
+
+        if(movie)
+            movie.genres = genres.filter(genre => movie.genre_ids.includes(genre.id));
+        
+        return movie;
     }
 }

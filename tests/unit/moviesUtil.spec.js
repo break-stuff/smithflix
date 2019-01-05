@@ -97,6 +97,19 @@ describe('moviesUtil', () => {
             expect(filteredMovies.length).to.equal(2);
         });
     });
+
+    describe('getMovieById', () => {
+        it('should return "Aquaman" when ID is 297802', () => {
+            // Arrange
+            let id = 297802;
+
+            // Act
+            let movie = moviesUtil.getMovieById(id);
+
+            // Assert
+            expect(movie.title).to.equal('Aquaman');
+        });
+    });
 });
 
 function resetFilter() {

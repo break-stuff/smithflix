@@ -1,0 +1,38 @@
+@import "../00_Abstracts/index.scss";
+
+.movie-details {
+    .page {
+        display: flex;
+        @include p(xxl);
+
+        .movie-poster {
+            max-width: 25%;
+
+            .movie-poster-tag {
+                width: 100%;
+                @include box-shadow(md);
+            }
+        }
+
+        .movie-overview {
+            width: 100%;
+            @include px(xxl);
+
+            .title {
+                .alt-title {
+                    color: color(light, darker);
+                    @include font-size(lg);
+                    @include pl(lg);
+                }
+            }
+
+            .genres {
+                .genre-list {
+                    .genre {
+                        @include mr(sm);
+                    }
+                }
+            }
+        }
+    }
+}
