@@ -7,6 +7,12 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+Vue.filter('longDate', (value) => {
+    if (!value) return '';
+    let date = new Date(value);
+    return `${date.toLocaleString('en-us', { month: 'long' })} ${date.getDate()}, ${date.getFullYear()}`;
+});
+
 new Vue({
     router,
     store,
