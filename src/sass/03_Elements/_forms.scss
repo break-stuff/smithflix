@@ -1,0 +1,15 @@
+@import "../00_Abstracts/index.scss";
+
+.form {
+    &-check {
+        @include hover {
+            cursor: pointer;
+        }
+
+        &-label {
+            @include hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
