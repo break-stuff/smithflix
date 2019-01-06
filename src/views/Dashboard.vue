@@ -38,6 +38,9 @@
             }
         },
         created() {
+            if(this.$route.query.genre)
+                this.movieFilter.genres.push(parseInt(this.$route.query.genre));
+
             this.filteredMovies = moviesUtils.filterMovies(this.movieFilter);
         }
     }

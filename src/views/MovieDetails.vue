@@ -1,7 +1,9 @@
 <template>
     <div class="container">
         <div class="movie-poster">
-            <img class="movie-poster-tag" :src="movie.poster_path" :alt="movie.title + ' movie poster'">
+            <a :href="movie.poster_path" target="_blank" rel="noopener noreferrer">
+                <img class="movie-poster-tag" :src="movie.poster_path" :alt="movie.title + ' movie poster'">
+            </a>
         </div>
         <div class="movie-overview">
             <h1 class="title">{{ movie.title }} <i class="alt-title" v-if="movie.title !== movie.original_title">aka - {{ movie.original_title }}</i></h1>
