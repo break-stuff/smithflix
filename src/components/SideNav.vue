@@ -5,9 +5,17 @@
             <search-box :movie-filter="movieFilter" />
         </div>
 
+        <!-- Sort -->
+        <div class="sort">
+            <h5>Sort By:</h5>
+            <select class="custom-select" v-model="movieFilter.sortBy" name="" id="">
+                <option v-for="option in sortOptions" :key="option.prop" :value="option.prop">{{option.name}}</option>
+            </select>
+        </div>
+
         <!-- Genres -->
         <div class="genres">
-            <h5>Genres</h5>
+            <h5>Genres:</h5>
 
             <div class="genre form-check" v-for="genre in genres" :key="genre.id">
                 <input type="checkbox" class="form-check-input" v-model="movieFilter.genres" :value="genre.id" name="" :id="genre.id" />
@@ -40,7 +48,25 @@
         data() {
             return {
                 genres,
-                selectedGenres: []
+                sortOptions: [
+                    { 
+                        prop: 'title', 
+                        name: 'Title'
+                    },
+                    { 
+                        prop: 'vote_average', 
+                        name: 'Audience Score'
+                    },
+                    { 
+                        prop: 'popularity', 
+                        name: 'Popularity'
+                    },
+                    { 
+                        prop: 'release_date', 
+                        name: 'Release Date'
+                    },
+                    
+                ]                
             }
         }
     }

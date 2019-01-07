@@ -24,7 +24,8 @@
                 filteredMovies: [],
                 movieFilter: {
                     genres: [],
-                    searchTerm: ''
+                    searchTerm: '',
+                    sortBy: 'title'
                 }
             }
         },

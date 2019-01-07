@@ -8,6 +8,7 @@ export default {
     filterMovies(filter) {
         this.filterByGenres(filter.genres);
         this.filterBySearchTerm(filter.searchTerm);
+        this.sortMovies(filter.sortBy);
 
         return this.filteredMovies;
     },
@@ -44,9 +45,9 @@ export default {
         });
     },
 
-    sortMovies(sortProp, isAsc) {
+    sortMovies(sortProp) {
         return this.filteredMovies.sort((a, b) => {
-            return isAsc ? a[sortProp] - b[sortProp] : b[sortProp] - a[sortProp];
+            return sortProp === 'release_date' ? new Date(a[sortProp]) - new Date(b[sortProp]) : a[sortProp] - b[sortProp];
         });
     },
 

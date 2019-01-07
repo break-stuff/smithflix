@@ -24,9 +24,6 @@
             clearSearch() {
                 this.movieFilter.searchTerm = '';
             }
-        },
-        created() {
-            console.log('filter', this.movieFilter);
         }
     }
 </script>

@@ -12,6 +12,10 @@
         @include mb(xxl);
     }
 
+    .sort {
+        @include mb(xxl);
+    }
+
     .genres {
         display: flex;
         flex-direction: column;

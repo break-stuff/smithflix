@@ -2,8 +2,10 @@
 
 .form {
     &-check {
-        @include hover {
-            cursor: pointer;
+        &-input {
+            @include hover {
+                cursor: pointer;
+            }
         }
 
         &-label {

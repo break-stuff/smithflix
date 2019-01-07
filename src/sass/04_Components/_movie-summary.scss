@@ -4,6 +4,12 @@
     border-radius: 0;
     @include box-shadow(md);
 
+    @include hover-focus-active {
+        .card-img-overlay {
+            background-color: color(black, base, 0.5);
+        }
+    }
+
     .card-img-top {
         border-radius: 0;
     }
