@@ -20,31 +20,61 @@
             <br>
             <div class="genres">
                 <h3>Genres</h3>
-                <h4 class="genre-list">
+                <h5 class="genre-list">
                     <router-link :to="`/dashboard?genre=${genre.id}`" v-for="genre in movie.genres" :key="genre.id" class="badge badge-light genre">{{genre.name}}</router-link>
-                </h4>
+                </h5>
             </div>
             <br>
             <div class="movie-description">
                 <h3>Overview:</h3>
                 <p>{{ movie.overview }}</p> 
             </div>
+            <br>
+            <div class="price">
+                <h3>Price:</h3>
+                <p>{{movie.price | currency}}</p>
+            </div>
+            <div class="form-inline">
+                <div class="form-group add-to-cart">
+                    <label for="number-of-days">Number of days: </label>
+                    <input class="form-control ml-1" type="number" v-model="daysCount" min="1" name="number-of-days" id="" />
+                    <span class="ml-1"><strong><em>{{subtotal | currency}}</em></strong></span>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" @click="addToCart">Add To Cart</button>
         </div>
     </div>
 </template>
 
 <script>
     import moviesUtil from '../utils/moviesUtil';
+    import cartUtil from '../utils/cartUtil';
     import StarRating from '../components/StarRating';
 
     export default {
         name: 'MovieDetails',
         components: {
-            StarRating
+            StarRating,
         },
         computed: {
             movie() {
                 return moviesUtil.getMovieById(parseInt(this.$route.params.id)); 
+            },
+            subtotal() {
+                return this.movie.price * this.daysCount;
+            }
+        },
+        data() {
+            return {
+                daysCount: 1
+            };
+        },
+        methods: {
+            addToCart() {
+                cartUtil.addToCart(this.movie.id, parseInt(this.daysCount));
+                console.log('cart', cartUtil.cartLines);
+                console.log('cart 2', cartUtil.getCart());
             }
         }
     }
