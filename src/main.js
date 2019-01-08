@@ -13,6 +13,10 @@ Vue.filter('longDate', (value) => {
     return `${date.toLocaleString('en-us', { month: 'long' })} ${date.getDate()}, ${date.getFullYear()}`;
 });
 
+Vue.filter('currency', function (value) {
+    return !value ? '' : '$' + parseFloat(value).toFixed(2);
+});
+
 new Vue({
     router,
     store,
