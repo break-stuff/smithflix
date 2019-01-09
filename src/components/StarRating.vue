@@ -1,5 +1,5 @@
 <template>
-    <div class="star-rating" :title="`${ratingPecent}%`">
+    <div class="star-rating" :title="ratingPecent">
         <div class="back-stars">
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -7,7 +7,7 @@
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
 
-            <div class="front-stars" :style="`width: ${ratingPecent}%`">
+            <div class="front-stars" :style="`width: ${ratingPecent}`">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -24,7 +24,7 @@ export default {
     props: [ 'rating' ],
     computed: {
         ratingPecent() {
-            return !this.rating ? 0 : parseFloat(this.rating) * 10;
+            return !this.rating ? 0 : parseFloat(this.rating) * 10 + '%';
         }
     }
 };

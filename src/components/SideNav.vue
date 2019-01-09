@@ -42,9 +42,6 @@
         components: {
             SearchBox
         },
-        computed: {
-
-        },
         data() {
             return {
                 genres,
