@@ -68,17 +68,6 @@ $color-pallette: build-pallet();
         text-color(primary, darker);
 */
 @function text-color($name: 'primary', $variant: 'base') {
-    // @if (lightness(color($name, $variant)) > 40) {
-    //     @if (lightness(color($name, darker)) > 40) {
-    //         @return color(black);
-    //     }
-
-    //     @return color($name, darker); // Lighter backgorund, return dark color
-    // }
-
-    // @else {
-    //     @return color(white); // Darker background, return light color
-    // }
     $color: color($name, $variant);
 
     $color-brightness: round((red($color)*299)+(green($color)*587)+(blue($color)*114)/1000);

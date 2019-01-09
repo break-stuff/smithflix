@@ -20,7 +20,9 @@
 
             <!-- Right Links -->
             <div class="navbar-nav ml-auto">
-                <router-link class="nav-item nav-link" to="/cart"><i class="fas fa-shopping-cart"></i></router-link>
+                <router-link class="nav-item nav-link" to="/cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </router-link>
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-cog"></i>
@@ -36,9 +38,16 @@
 
 <script>
     import localStorageUtil from '@/utils/localStorageUtil';
+    import cartUtil from '../utils/cartUtil';
 
     export default {
         name: 'MainMenu',
+        data() {
+            return {
+            }
+        },
+        computed: {
+        },
         methods: {
             clearData() {
                 localStorageUtil.clear();
