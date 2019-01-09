@@ -56,7 +56,7 @@
     import StarRating from '../components/StarRating';
 
     export default {
-        name: 'MovieDetails',
+        name: 'Movie',
         components: {
             StarRating,
         },
