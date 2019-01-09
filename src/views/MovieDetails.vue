@@ -34,15 +34,18 @@
                 <h3>Price:</h3>
                 <p>{{movie.price | currency}}</p>
             </div>
-            <div class="form-inline">
-                <div class="form-group add-to-cart">
-                    <label for="number-of-days">Number of days: </label>
-                    <input class="form-control ml-1" type="number" v-model="daysCount" min="1" name="number-of-days" id="" />
-                    <span class="ml-1"><strong><em>{{subtotal | currency}}</em></strong></span>
+            <div class="borrow">
+                <h3>Borrow:</h3>
+                <div class="form-inline">
+                    <div class="form-group add-to-cart">
+                        <label for="number-of-days">Number of days: </label>
+                        <input class="form-control ml-1" type="number" v-model="daysCount" min="1" name="number-of-days" id="" />
+                        <span class="ml-1"><strong><em>{{subtotal | currency}}</em></strong></span>
+                    </div>
                 </div>
+                <br>
+                <button class="btn btn-primary" @click="addToCart">Add To Cart</button>
             </div>
-            <br>
-            <button class="btn btn-primary" @click="addToCart">Add To Cart</button>
         </div>
     </div>
 </template>
@@ -57,6 +60,11 @@
         components: {
             StarRating,
         },
+        data() {
+            return {
+                daysCount: 1
+            };
+        },
         computed: {
             movie() {
                 return moviesUtil.getMovieById(parseInt(this.$route.params.id)); 
@@ -65,16 +73,10 @@
                 return this.movie.price * this.daysCount;
             }
         },
-        data() {
-            return {
-                daysCount: 1
-            };
-        },
         methods: {
             addToCart() {
                 cartUtil.addToCart(this.movie.id, parseInt(this.daysCount));
-                console.log('cart', cartUtil.cartLines);
-                console.log('cart 2', cartUtil.getCart());
+                this.$router.push('/dashboard');
             }
         }
     }

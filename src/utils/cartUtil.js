@@ -25,5 +25,9 @@ export default {
 
     removeFromCart(movieId) {
         this.cartLines = this.cartLines.filter(x => x.movieId !== movieId);
+    },
+
+    getCartCount() {
+        return this.cartLines.length;
     }
 }
