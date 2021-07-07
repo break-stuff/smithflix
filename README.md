@@ -1,4 +1,4 @@
-# Smmithflix Challenge
+# Smithflix Challenge
 Welcome to the Smithflix Vue.js challenge!!!
 
 to build and run this application, the following commands are available:
